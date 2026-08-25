@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Argus - Autonomous AI Penetration Testing Framework</title>
+    <title>Argus - Autonomous AI Offensive Security & PenTest Framework</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Canvas for Neural Interactive Particles -->
+    <canvas id="neuralCanvas"></canvas>
     <div class="bg-grid"></div>
     <div class="glow-orb glow-1"></div>
     <div class="glow-orb glow-2"></div>
@@ -18,15 +20,17 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo">
+            <a href="#" class="logo">
                 <span class="logo-bracket">[</span>
                 <span class="logo-text">ARGUS</span>
                 <span class="logo-bracket">]</span>
                 <span class="logo-tag">AI-PenTest</span>
-            </div>
+            </a>
             <div class="nav-links">
                 <a href="#about" class="nav-link">About</a>
-                <a href="#features" class="nav-link">Capabilities</a>
+                <a href="#architecture" class="nav-link">Workflow Engine</a>
+                <a href="#matrix" class="nav-link">Capabilities</a>
+                <a href="#terminal" class="nav-link">Live Terminal</a>
                 <a href="#team" class="nav-link">The Team</a>
                 <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer" class="btn btn-nav">
                     <i class="fa-brands fa-github"></i> Repository
@@ -42,82 +46,194 @@
                 <span class="pulse-dot"></span> Next-Gen Offensive Security Intelligence
             </div>
             <h1 class="hero-title">
-                Autonomous Security Assessment Driven by <span class="gradient-text">Advanced AI</span>
+                Autonomous Penetration Testing Driven by <span class="gradient-text">Neural Agents</span>
             </h1>
             <p class="hero-description">
-                <strong>Project Argus</strong> is an intelligent, automated penetration testing and vulnerability analysis framework engineered to simulate realistic cyber attacks, detect multi-vector risks, and strengthen enterprise cyber defense.
+                <strong>Project Argus</strong> reimagines automated cybersecurity assessment. By combining dynamic multi-agent LLM reasoning, sandboxed exploit chaining, and automated attack-surface telemetry, Argus continuously identifies, validates, and remediates modern cyber vulnerabilities before adversaries can strike.
             </p>
             <div class="hero-actions">
                 <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    <i class="fa-brands fa-github"></i> Explore Project
+                    <i class="fa-brands fa-github"></i> Explore Source Code
                 </a>
-                <a href="#team" class="btn btn-secondary">
-                    <i class="fa-solid fa-users"></i> Meet The Creators
+                <a href="#architecture" class="btn btn-secondary">
+                    <i class="fa-solid fa-network-wired"></i> System Architecture
                 </a>
             </div>
 
-            <!-- Terminal / Code Preview -->
-            <div class="terminal-card">
+            <!-- Live Metrics Strip -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-number" data-target="100">0%</span>
+                    <span class="metric-label">Autonomous Exploitation Chaining</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number" data-target="98.7">0%</span>
+                    <span class="metric-label">Zero-Day Verification Accuracy</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number" data-target="10">0x</span>
+                    <span class="metric-label">Faster Remediation Cycle</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number" data-target="0">0</span>
+                    <span class="metric-label">Sandbox False Positives</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Architecture & Interactive Workflow Section -->
+    <section id="architecture" class="section">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="section-badge">How Argus Operates</span>
+                <h2 class="section-title">End-to-End AI Attack & Defense Pipeline</h2>
+                <p class="section-subtitle">A multi-stage cognitive framework moving seamlessly from perimeter reconnaissance to automated exploit generation and defensive remediation.</p>
+            </div>
+
+            <div class="workflow-grid">
+                <!-- Step 1 -->
+                <div class="workflow-card">
+                    <div class="step-num">01</div>
+                    <div class="workflow-icon"><i class="fa-solid fa-radar"></i></div>
+                    <h3>Adaptive Surface Recon</h3>
+                    <p>Continuous discovery of APIs, active endpoints, exposed microservices, and DNS permutations across hybrid environments.</p>
+                    <ul class="workflow-features">
+                        <li><i class="fa-solid fa-check"></i> Subdomain & Port Vectoring</li>
+                        <li><i class="fa-solid fa-check"></i> API Schema Reconstruction</li>
+                    </ul>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="workflow-card">
+                    <div class="step-num">02</div>
+                    <div class="workflow-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Multi-Agent LLM Reasoning</h3>
+                    <p>Cooperating AI agents synthesize reconnaissance data to construct threat graphs and model complex multi-step attack vectors.</p>
+                    <ul class="workflow-features">
+                        <li><i class="fa-solid fa-check"></i> Contextual Vulnerability Modeling</li>
+                        <li><i class="fa-solid fa-check"></i> Dynamic Payload Formulation</li>
+                    </ul>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="workflow-card">
+                    <div class="step-num">03</div>
+                    <div class="workflow-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Sandboxed Validation</h3>
+                    <p>Executes safe, non-destructive proof-of-concept verification inside isolated sandboxes to eliminate false positives.</p>
+                    <ul class="workflow-features">
+                        <li><i class="fa-solid fa-check"></i> Non-destructive PoC Validation</li>
+                        <li><i class="fa-solid fa-check"></i> Zero-noise Verification</li>
+                    </ul>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="workflow-card">
+                    <div class="step-num">04</div>
+                    <div class="workflow-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>Remediation Synthesizer</h3>
+                    <p>Generates tailored patch recommendations, custom WAF rules, and executive risk scores for DevOps & Security teams.</p>
+                    <ul class="workflow-features">
+                        <li><i class="fa-solid fa-check"></i> Auto-Generated Code Patches</li>
+                        <li><i class="fa-solid fa-check"></i> Compliance-Ready Audit Reports</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attack Vectors & Matrix -->
+    <section id="matrix" class="section section-darker">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="section-badge">Core Capabilities</span>
+                <h2 class="section-title">Built for Modern Attack Surfaces</h2>
+                <p class="section-subtitle">Argus autonomously targets and audits critical cloud, API, and internal enterprise architectures.</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card cap-card">
+                    <div class="cap-header">
+                        <i class="fa-solid fa-cloud-bolt"></i>
+                        <h3>Cloud & IAM Misconfigurations</h3>
+                    </div>
+                    <p>Identifies privilege escalation vectors, loose IAM permissions, and leaky S3/Blob storage policies in real time.</p>
+                </div>
+                <div class="card cap-card">
+                    <div class="cap-header">
+                        <i class="fa-solid fa-code"></i>
+                        <h3>API & Business Logic Flaws</h3>
+                    </div>
+                    <p>Uncovers complex BOLA, IDOR, parameter tampering, and payment bypass flaws that standard AST tools miss.</p>
+                </div>
+                <div class="card cap-card">
+                    <div class="cap-header">
+                        <i class="fa-solid fa-database"></i>
+                        <h3>Deep Injection & Zero-Days</h3>
+                    </div>
+                    <p>Synthesizes novel SQLi, NoSQLi, Template Injection, and RCE payloads adapted specifically to target defenses.</p>
+                </div>
+                <div class="card cap-card">
+                    <div class="cap-header">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <h3>Internal Pivoting & Lateral Movement</h3>
+                    </div>
+                    <p>Simulates advanced post-exploitation chaining to discover unsegmented subnets and domain compromise routes.</p>
+                </div>
+                <div class="card cap-card">
+                    <div class="cap-header">
+                        <i class="fa-solid fa-lock-open"></i>
+                        <h3>Authentication & JWT Bypass</h3>
+                    </div>
+                    <p>Audits weak cryptography algorithms, token forging, algorithm-switching attacks, and session fixation traps.</p>
+                </div>
+                <div class="card cap-card">
+                    <div class="cap-header">
+                        <i class="fa-solid fa-file-shield"></i>
+                        <h3>Live Playbook Orchestration</h3>
+                    </div>
+                    <p>Exports actionable, developer-friendly git-ready patch pull requests and infrastructure-as-code hardening scripts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Live Terminal Simulation -->
+    <section id="terminal" class="section">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="section-badge">Live Console</span>
+                <h2 class="section-title">Interactive Neural Engine Telemetry</h2>
+                <p class="section-subtitle">Experience how Argus orchestrates live penetration tests through asynchronous agent telemetry.</p>
+            </div>
+
+            <div class="terminal-card terminal-interactive">
                 <div class="terminal-header">
                     <div class="terminal-buttons">
                         <span class="btn-circle red"></span>
                         <span class="btn-circle yellow"></span>
                         <span class="btn-circle green"></span>
                     </div>
-                    <span class="terminal-title">argus-core --session live-telemetry</span>
-                </div>
-                <div class="terminal-body">
-                    <p class="cmd"><span class="prompt">argus@core:~$</span> python -m argus.engine --target enterprise.local --mode adaptive-recon</p>
-                    <p class="output info">[+] Initializing Argus Neural Penetration Engine v2.4...</p>
-                    <p class="output success">[✔] Target asset map synthesized: 14 endpoints, 3 API gateways</p>
-                    <p class="output warning">[!] High Severity Risk Identified: Dynamic Parameter Tampering & Auth Bypass vectors</p>
-                    <p class="output status"><span class="cursor-blink">█</span> Ready for active remediation orchestrations...</p>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- About / Overview Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-head text-center">
-                <h2 class="section-title">The All-Seeing Security Guardian</h2>
-                <p class="section-subtitle">Named after Argus Panoptes—the hundred-eyed guardian of mythology—our system watches every attack surface relentlessly.</p>
-            </div>
-
-            <div class="grid grid-3">
-                <div class="card feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-microchip"></i>
+                    <span class="terminal-title">argus-core v2.4 (Active Neural Session)</span>
+                    <div class="terminal-controls">
+                        <button id="runScanBtn" class="term-btn"><i class="fa-solid fa-play"></i> Re-Run Simulation</button>
                     </div>
-                    <h3>Autonomous Orchestration</h3>
-                    <p>Leverages self-improving agents to chain complex exploits and identify edge vulnerabilities across network infrastructures.</p>
                 </div>
-                <div class="card feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3>Precision Penetration</h3>
-                    <p>Minimizes false positives by verifying exploitability in sandboxed execution environments safely.</p>
-                </div>
-                <div class="card feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                    <h3>Actionable Remediation</h3>
-                    <p>Generates prioritized mitigation playbooks and executive reporting for engineering & security teams.</p>
+                <div class="terminal-body" id="terminalLogs">
+                    <!-- Dynamic logs populated via script.js -->
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="section section-team">
+    <section id="team" class="section section-darker">
         <div class="container">
             <div class="section-head text-center">
-                <span class="section-badge">Digilians & Argus Team</span>
-                <h2 class="section-title">Project Contributors & Creators</h2>
-                <p class="section-subtitle">The dedicated minds behind the research, architecture, and development of Project Argus.</p>
+                <span class="section-badge">Project Contributors</span>
+                <h2 class="section-title">Digilians & Argus Creators</h2>
+                <p class="section-subtitle">The dedicated research and engineering team building the future of automated offensive AI.</p>
             </div>
 
             <div class="team-grid">
@@ -271,5 +387,8 @@
             </div>
         </div>
     </footer>
+
+    <!-- Interactive Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
