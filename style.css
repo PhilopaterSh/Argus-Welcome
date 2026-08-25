@@ -573,6 +573,48 @@ code {
 @keyframes tickerScroll { to { transform: translateX(-50%); } }
 
 /* --------------------------------------------------------------------------
+   Affiliations / supervising institutions
+   -------------------------------------------------------------------------- */
+.affiliations {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 0 0.6rem;
+}
+.affil-label {
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-low);
+    margin-bottom: 1.8rem;
+}
+.affil-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(2.2rem, 6vw, 4.5rem);
+}
+.affil-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.affil-card img {
+    height: clamp(70px, 9vw, 100px);
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: screen;   /* black logo background disappears on dark page */
+    opacity: 0.88;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.affil-card:hover img {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* --------------------------------------------------------------------------
    Sections
    -------------------------------------------------------------------------- */
 .section {
@@ -1086,6 +1128,8 @@ code {
     .nav-links, .btn-ghost span { display: none; }
     .btn-ghost { padding: 8px 12px; }
     .nav-burger { display: flex; }
+    .affil-grid { grid-template-columns: 1fr; gap: 1.4rem; justify-items: center; }
+    .affil-card img { height: clamp(56px, 14vw, 72px); }
     .bento { grid-template-columns: 1fr; }
     .bento-split { grid-template-columns: 1fr; gap: 1.6rem; }
     .loop-diagram { grid-template-columns: 1fr; gap: 0; padding-bottom: 2.6rem; }
