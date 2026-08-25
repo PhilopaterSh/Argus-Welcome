@@ -97,130 +97,139 @@ body {
     z-index: 1;
 }
 
-/* Navigation */
-.navbar {
+/* ==========================================================================
+   Clean, Modern Streamlined Navigation Bar (Single Horizontal Line)
+   ========================================================================== */
+.site-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    background: rgba(6, 8, 13, 0.88);
+    height: 72px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(6, 8, 13, 0.82);
     border-bottom: 1px solid var(--border-color);
-    z-index: 100;
+    z-index: 1000;
 }
 
-.nav-container {
+.nav-wrapper {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    height: 80px;
+    height: 100%;
+    gap: 1.5rem;
 }
 
-.logo {
-    display: flex;
+/* Brand Section */
+.brand {
+    display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    font-size: 1.35rem;
-    letter-spacing: 1px;
+    gap: 4px;
     text-decoration: none;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
-.logo-bracket {
+.brand-bracket {
+    font-family: var(--font-mono);
     color: var(--accent-cyan);
+    font-size: 1.25rem;
+    font-weight: 700;
 }
 
-.logo-text {
+.brand-name {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
     background: linear-gradient(135deg, #ffffff, #94a3b8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.logo-tag {
-    font-size: 0.75rem;
-    background: rgba(0, 242, 254, 0.1);
+.brand-badge {
+    margin-left: 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
     color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid rgba(0, 242, 254, 0.3);
     padding: 2px 8px;
     border-radius: 4px;
-    border: 1px solid rgba(0, 242, 254, 0.3);
-    margin-left: 8px;
+    letter-spacing: 0.5px;
 }
 
-.nav-links {
+/* Menu Items (Centered Horizontal Row) */
+.nav-menu {
     display: flex;
     align-items: center;
-    gap: 1.8rem;
+    gap: 1.6rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-link {
+.menu-item {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     font-weight: 500;
-    transition: color 0.25s ease;
+    padding: 6px 4px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    position: relative;
 }
 
-.nav-link:hover {
+.menu-item:hover {
     color: var(--accent-cyan);
 }
 
-/* Buttons */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.8rem 1.7rem;
-    border-radius: 10px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
+.menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent-cyan);
+    transition: width 0.25s ease;
+    border-radius: 2px;
 }
 
-.btn-nav {
+.menu-item:hover::after {
+    width: 100%;
+}
+
+/* Right-Side Action */
+.nav-action {
+    flex-shrink: 0;
+}
+
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: rgba(0, 242, 254, 0.08);
     color: var(--accent-cyan);
     border: 1px solid rgba(0, 242, 254, 0.3);
-    padding: 0.55rem 1.2rem;
-    font-size: 0.88rem;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
 }
 
-.btn-nav:hover {
+.btn-github:hover {
     background: var(--accent-cyan);
-    color: #000;
-    box-shadow: 0 0 16px rgba(0, 242, 254, 0.4);
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
     color: #040810;
-    border: none;
-    box-shadow: 0 4px 22px rgba(0, 242, 254, 0.35);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(0, 242, 254, 0.55);
-}
-
-.btn-secondary {
-    background: var(--bg-card);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-}
-
-.btn-secondary:hover {
-    border-color: var(--accent-cyan);
-    color: var(--accent-cyan);
-    transform: translateY(-2px);
+    box-shadow: 0 0 16px rgba(0, 242, 254, 0.4);
 }
 
 /* Hero Section */
 .hero {
-    padding: 190px 0 100px;
+    padding: 170px 0 90px;
     text-align: center;
 }
 
@@ -286,6 +295,44 @@ body {
     gap: 1.2rem;
     margin-bottom: 4rem;
     flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.7rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+    color: #040810;
+    border: none;
+    box-shadow: 0 4px 22px rgba(0, 242, 254, 0.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0, 242, 254, 0.55);
+}
+
+.btn-secondary {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+    transform: translateY(-2px);
 }
 
 /* Metrics Grid */
@@ -787,7 +834,7 @@ code {
     gap: 1.5rem;
 }
 
-.logo-small {
+.brand-small {
     font-size: 1.1rem;
     margin-bottom: 6px;
 }
@@ -816,6 +863,9 @@ code {
     .metrics-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .nav-menu {
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -823,7 +873,7 @@ code {
         font-size: 2.3rem;
     }
     
-    .nav-links {
+    .nav-menu {
         display: none;
     }
 

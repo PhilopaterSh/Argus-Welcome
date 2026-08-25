@@ -11,37 +11,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Interactive Neural Network Background Canvas -->
+    <!-- Interactive Neural Background Canvas -->
     <canvas id="neuralCanvas"></canvas>
     <div class="bg-grid"></div>
     <div class="glow-orb glow-1"></div>
     <div class="glow-orb glow-2"></div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <span class="logo-bracket">[</span>
-                <span class="logo-text">ARGUS</span>
-                <span class="logo-bracket">]</span>
-                <span class="logo-tag">Security Framework</span>
+    <!-- Clean, Streamlined Single-Line Navigation -->
+    <header class="site-header">
+        <div class="container nav-wrapper">
+            <a href="#" class="brand">
+                <span class="brand-bracket">[</span>
+                <span class="brand-name">ARGUS</span>
+                <span class="brand-bracket">]</span>
+                <span class="brand-badge">Security Framework</span>
             </a>
-            <div class="nav-links">
-                <a href="#about" class="nav-link">Overview</a>
-                <a href="#architecture" class="nav-link">System Architecture</a>
-                <a href="#recon" class="nav-link">5-Phase Recon</a>
-                <a href="#modules" class="nav-link">Core Engine</a>
-                <a href="#terminal" class="nav-link">Live Studio Console</a>
-                <a href="#team" class="nav-link">The Team</a>
-                <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer" class="btn btn-nav">
-                    <i class="fa-brands fa-github"></i> Repository
+
+            <nav class="nav-menu">
+                <a href="#about" class="menu-item">Overview</a>
+                <a href="#architecture" class="menu-item">Architecture</a>
+                <a href="#recon" class="menu-item">Recon Engine</a>
+                <a href="#modules" class="menu-item">Core Services</a>
+                <a href="#terminal" class="menu-item">Live Studio</a>
+                <a href="#team" class="menu-item">The Team</a>
+            </nav>
+
+            <div class="nav-action">
+                <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer" class="btn-github">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Repository</span>
                 </a>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <header class="hero" id="about">
+    <section class="hero" id="about">
         <div class="container hero-container">
             <div class="badge">
                 <span class="pulse-dot"></span> Autonomous Local AI Offensive Security Framework
@@ -81,7 +86,7 @@
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- Real Architecture & Workflow Engine (arc42 / C4 Model) -->
     <section id="architecture" class="section">
@@ -171,7 +176,7 @@
                 <div class="timeline-step">
                     <div class="timeline-dot">3</div>
                     <div class="timeline-content">
-                        <h4>Phase 3: Permutations & Permutate</h4>
+                        <h4>Phase 3: Permutations</h4>
                         <p>Dynamic permutation synthesis using <code>DNSGen</code> and mass resolver queries with <code>MassDNS</code>.</p>
                     </div>
                 </div>
@@ -185,7 +190,7 @@
                 <div class="timeline-step">
                     <div class="timeline-dot">5</div>
                     <div class="timeline-content">
-                        <h4>Phase 5: Deep Tech & Vuln Analysis</h4>
+                        <h4>Phase 5: Deep Tech & Vulns</h4>
                         <p>Fingerprinting technologies, WAF detection, and vulnerability scanning via <code>WhatWeb</code>, <code>Wafw00f</code>, <code>Nmap</code>, and <code>Nuclei</code>.</p>
                     </div>
                 </div>
@@ -423,10 +428,10 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-left">
-                <div class="logo logo-small">
-                    <span class="logo-bracket">[</span>
-                    <span class="logo-text">ARGUS</span>
-                    <span class="logo-bracket">]</span>
+                <div class="brand brand-small">
+                    <span class="brand-bracket">[</span>
+                    <span class="brand-name">ARGUS</span>
+                    <span class="brand-bracket">]</span>
                 </div>
                 <p class="copyright">© 2026 Argus Security Framework - Digilians. All rights reserved.</p>
             </div>
