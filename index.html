@@ -3,444 +3,414 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Argus - Autonomous AI Penetration Testing Framework</title>
+    <meta name="description" content="Argus — an autonomous AI penetration testing framework. Local LLM reasoning (Ollama), LangGraph ReAct workflows, FAISS knowledge fusion, and a native Kali Linux WSL bridge.">
+    <title>Argus — Autonomous AI Penetration Testing Framework</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Interactive Neural Background Canvas -->
-    <canvas id="neuralCanvas"></canvas>
-    <div class="bg-grid"></div>
-    <div class="glow-orb glow-1"></div>
-    <div class="glow-orb glow-2"></div>
 
-    <!-- Clean, Streamlined Single-Line Navigation -->
-    <header class="site-header">
-        <div class="container nav-wrapper">
-            <a href="#" class="brand">
-                <span class="brand-bracket">[</span>
-                <span class="brand-name">ARGUS</span>
-                <span class="brand-bracket">]</span>
-                <span class="brand-badge">Security Framework</span>
+    <!-- Background layers -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <header class="nav" id="siteNav">
+        <div class="container nav-inner">
+            <a href="#about" class="brand" aria-label="Argus home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 6v6c0 5 3.8 8.6 9 10 5.2-1.4 9-5 9-10V6l-9-4z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="1.6"/><path d="M12 13.4V17M9.6 15h4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <span class="brand-word">ARGUS</span>
+                <span class="brand-tag">v2.4</span>
             </a>
 
-            <nav class="nav-menu">
-                <a href="#about" class="menu-item">Overview</a>
-                <a href="#architecture" class="menu-item">Architecture</a>
-                <a href="#recon" class="menu-item">Recon Engine</a>
-                <a href="#modules" class="menu-item">Core Services</a>
-                <a href="#terminal" class="menu-item">Live Studio</a>
-                <a href="#team" class="menu-item">The Team</a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="#architecture" data-section="architecture">Architecture</a>
+                <a href="#recon" data-section="recon">Recon Engine</a>
+                <a href="#modules" data-section="modules">Tool Registry</a>
+                <a href="#studio" data-section="studio">Live Studio</a>
+                <a href="#team" data-section="team">Team</a>
             </nav>
 
-            <div class="nav-action">
-                <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer" class="btn-github">
-                    <i class="fa-brands fa-github"></i>
-                    <span>Repository</span>
+            <div class="nav-actions">
+                <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+                    <i class="fa-brands fa-github"></i><span>Source</span>
                 </a>
+                <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="about">
-        <div class="container hero-container">
-            <div class="badge">
-                <span class="pulse-dot"></span> Autonomous Local AI Offensive Security Framework
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav aria-label="Mobile">
+            <a href="#architecture"><span>01</span>Architecture</a>
+            <a href="#recon"><span>02</span>Recon Engine</a>
+            <a href="#modules"><span>03</span>Tool Registry</a>
+            <a href="#studio"><span>04</span>Live Studio</a>
+            <a href="#team"><span>05</span>The Team</a>
+        </nav>
+        <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fa-brands fa-github"></i> Open Repository
+        </a>
+    </div>
+
+    <main>
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="about">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <div class="hero-badge">
+                        <span class="dot-live"></span>
+                        100% local · Ollama-powered · zero cloud calls
+                    </div>
+
+                    <h1 class="hero-title">
+                        An AI operator that<br>
+                        thinks like a <em>pentester.</em>
+                    </h1>
+
+                    <p class="hero-sub">
+                        <strong>Argus</strong> chains local LLM reasoning — Ollama / WhiteRabbitNeo — with
+                        LangGraph ReAct workflows, FAISS knowledge fusion and a native Kali&nbsp;Linux (WSL)
+                        bridge to map, probe and verify targets autonomously.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            Explore the framework <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#studio" class="btn btn-outline">
+                            <i class="fa-solid fa-terminal"></i> Watch it reason
+                        </a>
+                    </div>
+
+                    <dl class="hero-stats">
+                        <div><dt data-count="100" data-suffix="%">0%</dt><dd>local data privacy</dd></div>
+                        <div><dt data-count="5">0</dt><dd>native recon phases</dd></div>
+                        <div><dt data-count="12">0</dt><dd>WSL tool services</dd></div>
+                        <div><dt data-count="0">0</dt><dd>cloud dependencies</dd></div>
+                    </dl>
+                </div>
+
+                <!-- Live agent loop terminal -->
+                <div class="agent-shell reveal delay-1" aria-label="Live ReAct loop simulation">
+                    <div class="term-head">
+                        <span class="term-dots"><i></i><i></i><i></i></span>
+                        <span class="term-title">argus-brain · live ReAct loop</span>
+                        <span class="term-chip">WhiteRabbitNeo-V3-7B</span>
+                    </div>
+                    <div class="term-body" id="agentLoop" aria-live="off"></div>
+                    <div class="term-statusbar">
+                        <span><i class="fa-solid fa-circle" style="font-size:.45rem;color:var(--ok)"></i> ollama</span>
+                        <span><i class="fa-solid fa-circle" style="font-size:.45rem;color:var(--ok)"></i> wsl-kali</span>
+                        <span><i class="fa-solid fa-circle" style="font-size:.45rem;color:var(--teal)"></i> faiss</span>
+                        <span class="sb-right">langgraph · react</span>
+                    </div>
+                </div>
             </div>
-            <h1 class="hero-title">
-                Intelligent Security Reasoning & <span class="gradient-text">Tactical Tool Orchestration</span>
-            </h1>
-            <p class="hero-description">
-                <strong>Project Argus</strong> bridges the gap between high-level AI reasoning and low-level penetration testing arsenals. Powered by local LLMs (Ollama / WhiteRabbitNeo), LangGraph ReAct workflows, RAG Knowledge Fusion (FAISS), and seamless Windows-to-Kali Linux (WSL) bridging.
-            </p>
-            <div class="hero-actions">
-                <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    <i class="fa-brands fa-github"></i> Explore Source Code
-                </a>
-                <a href="#architecture" class="btn btn-secondary">
-                    <i class="fa-solid fa-diagram-project"></i> Architecture & arc42
-                </a>
-            </div>
+        </section>
 
-            <!-- Authentic Project Metrics -->
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <span class="metric-number" data-target="100">0%</span>
-                    <span class="metric-label">Local Data Privacy (Ollama LLM)</span>
+        <!-- ============ TOOL TICKER ============ -->
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track" id="tickerTrack">
+                <div class="ticker-group">
+                    <span>subfinder<i>*</i></span><span>amass<i>*</i></span><span>nuclei<i>*</i></span>
+                    <span>nmap<i>*</i></span><span>httpx<i>*</i></span><span>gobuster<i>*</i></span>
+                    <span>ffuf<i>*</i></span><span>katana<i>*</i></span><span>massdns<i>*</i></span>
+                    <span>dnsgen<i>*</i></span><span>whatweb<i>*</i></span><span>wafw00f<i>*</i></span>
+                    <span>anew<i>*</i></span><span>findomain<i>*</i></span><span>assetfinder<i>*</i></span>
+                    <span>faiss<i>*</i></span><span>langgraph<i>*</i></span><span>ollama<i>*</i></span>
                 </div>
-                <div class="metric-card">
-                    <span class="metric-number" data-target="5">0</span>
-                    <span class="metric-label">Native Recon Engine Phases</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-number" data-target="12">0</span>
-                    <span class="metric-label">Integrated WSL Tool Services</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-number" data-target="0">0</span>
-                    <span class="metric-label">Zero-APT Simulation Impact</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Real Architecture & Workflow Engine (arc42 / C4 Model) -->
-    <section id="architecture" class="section">
-        <div class="container">
-            <div class="section-head text-center">
-                <span class="section-badge">arc42 & C4 Architecture</span>
-                <h2 class="section-title">The Brain, Body & Knowledge Architecture</h2>
-                <p class="section-subtitle">A multi-layered cognitive framework dividing reasoning, persistent intelligence, and low-level tactical execution.</p>
-            </div>
-
-            <div class="workflow-grid">
-                <!-- Pillar 1: ArgusBrain & LangGraph -->
-                <div class="workflow-card">
-                    <div class="step-num">01</div>
-                    <div class="workflow-icon"><i class="fa-solid fa-brain"></i></div>
-                    <h3>ArgusBrain & LangGraph</h3>
-                    <p>ReAct & StateGraph controller executing the <code>Thought ➔ Action ➔ Observation</code> loop with automated JSON and text parsing fallback.</p>
-                    <ul class="workflow-features">
-                        <li><i class="fa-solid fa-check"></i> WhiteRabbitNeo-V3-7B / Local Ollama</li>
-                        <li><i class="fa-solid fa-check"></i> LangGraph ReAct Dual-Mode Agent</li>
-                    </ul>
-                </div>
-
-                <!-- Pillar 2: RAG & Memory Blackboard -->
-                <div class="workflow-card">
-                    <div class="step-num">02</div>
-                    <div class="workflow-icon"><i class="fa-solid fa-database"></i></div>
-                    <h3>RAG & SQLite Blackboard</h3>
-                    <p>Fuses static technical knowledge from FAISS vector store with live session target state across targets, findings, and entities.</p>
-                    <ul class="workflow-features">
-                        <li><i class="fa-solid fa-check"></i> FAISS Vector Store + nomic-embed-text</li>
-                        <li><i class="fa-solid fa-check"></i> Persistent SQLite Blackboard Schema</li>
-                    </ul>
-                </div>
-
-                <!-- Pillar 3: WSLBridge & Tool Registry -->
-                <div class="workflow-card">
-                    <div class="step-num">03</div>
-                    <div class="workflow-icon"><i class="fa-solid fa-terminal"></i></div>
-                    <h3>WSLBridge Execution</h3>
-                    <p>Seamless execution bridge running security arsenals inside isolated Kali Linux WSL containers without polluting the host OS.</p>
-                    <ul class="workflow-features">
-                        <li><i class="fa-solid fa-check"></i> Subprocess & SSH Kali Bridge</li>
-                        <li><i class="fa-solid fa-check"></i> Auto Self-Healing (APT/Pip)</li>
-                    </ul>
-                </div>
-
-                <!-- Pillar 4: Reflective Verification & ZERO-APT -->
-                <div class="workflow-card">
-                    <div class="step-num">04</div>
-                    <div class="workflow-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3>Reflective & ZERO-APT</h3>
-                    <p>Pre-execution and post-execution verification to eliminate false positives and WAF traps, alongside STIX 2.0 APT simulation cycles.</p>
-                    <ul class="workflow-features">
-                        <li><i class="fa-solid fa-check"></i> Pre/Post Execution Reflection</li>
-                        <li><i class="fa-solid fa-check"></i> Attacker-Defender-Judge Cycles</li>
-                    </ul>
+                <div class="ticker-group" aria-hidden="true">
+                    <span>subfinder<i>*</i></span><span>amass<i>*</i></span><span>nuclei<i>*</i></span>
+                    <span>nmap<i>*</i></span><span>httpx<i>*</i></span><span>gobuster<i>*</i></span>
+                    <span>ffuf<i>*</i></span><span>katana<i>*</i></span><span>massdns<i>*</i></span>
+                    <span>dnsgen<i>*</i></span><span>whatweb<i>*</i></span><span>wafw00f<i>*</i></span>
+                    <span>anew<i>*</i></span><span>findomain<i>*</i></span><span>assetfinder<i>*</i></span>
+                    <span>faiss<i>*</i></span><span>langgraph<i>*</i></span><span>ollama<i>*</i></span>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- 5-Phase Argus Recon Engine Section -->
-    <section id="recon" class="section section-darker">
-        <div class="container">
-            <div class="section-head text-center">
-                <span class="section-badge">Automated Recon Pipeline</span>
-                <h2 class="section-title">Argus 5-Phase Native Recon Engine</h2>
-                <p class="section-subtitle">The custom pipeline engineered to map entire attack surfaces methodically before strategic exploitation.</p>
-            </div>
+        <!-- ============ 01 ARCHITECTURE ============ -->
+        <section class="section" id="architecture">
+            <div class="container">
+                <header class="sec-head reveal">
+                    <p class="sec-tag">[01] // system architecture &mdash; arc42 / c4</p>
+                    <h2 class="sec-title">A brain, a memory,<br>a pair of hands.</h2>
+                    <p class="sec-sub">Three cooperating layers separate strategic reasoning from persistent knowledge and low-level tactical execution.</p>
+                </header>
 
-            <div class="recon-timeline">
-                <div class="timeline-step">
-                    <div class="timeline-dot">1</div>
-                    <div class="timeline-content">
-                        <h4>Phase 1: Passive OSINT</h4>
-                        <p>Asset & subdomain harvesting via <code>Subfinder</code>, <code>Findomain</code>, <code>Amass</code>, and <code>Assetfinder</code>.</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-dot">2</div>
-                    <div class="timeline-content">
-                        <h4>Phase 2: Active Brute-Force</h4>
-                        <p>DNS & endpoint brute-forcing with custom wordlists utilizing <code>Gobuster</code> and <code>FFuf</code>.</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-dot">3</div>
-                    <div class="timeline-content">
-                        <h4>Phase 3: Permutations</h4>
-                        <p>Dynamic permutation synthesis using <code>DNSGen</code> and mass resolver queries with <code>MassDNS</code>.</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-dot">4</div>
-                    <div class="timeline-content">
-                        <h4>Phase 4: Probing & Validation</h4>
-                        <p>Live HTTP/HTTPS service validation, title extraction, and deduplication via <code>HTTPX</code> & <code>anew</code>.</p>
-                    </div>
-                </div>
-                <div class="timeline-step">
-                    <div class="timeline-dot">5</div>
-                    <div class="timeline-content">
-                        <h4>Phase 5: Deep Tech & Vulns</h4>
-                        <p>Fingerprinting technologies, WAF detection, and vulnerability scanning via <code>WhatWeb</code>, <code>Wafw00f</code>, <code>Nmap</code>, and <code>Nuclei</code>.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="bento">
+                    <!-- ReAct loop card -->
+                    <article class="bento-card bento-wide reveal">
+                        <div class="bento-split">
+                            <div class="bento-copy">
+                                <span class="card-kicker">core reasoning engine</span>
+                                <h3>ArgusBrain &mdash; LangGraph ReAct controller</h3>
+                                <p>A dual-mode StateGraph agent executing a strict
+                                    <code>Thought&nbsp;&rarr;&nbsp;Action&nbsp;&rarr;&nbsp;Observation</code> cycle,
+                                    with automated JSON and plain-text parsing fallback when models drift off-schema.</p>
+                                <ul class="check-list">
+                                    <li><i class="fa-solid fa-check"></i>WhiteRabbitNeo-V3-7B via local Ollama runtime</li>
+                                    <li><i class="fa-solid fa-check"></i>Dual-mode agent &mdash; structured JSON &amp; text fallback</li>
+                                </ul>
+                            </div>
+                            <div class="loop-diagram" id="loopDiagram" aria-hidden="true">
+                                <div class="loop-node" data-node="thought">
+                                    <span class="ln-icon"><i class="fa-solid fa-brain"></i></span>
+                                    <span class="ln-name">Thought</span>
+                                    <span class="ln-sub">reason &amp; plan</span>
+                                </div>
+                                <div class="loop-link"><span></span></div>
+                                <div class="loop-node" data-node="action">
+                                    <span class="ln-icon"><i class="fa-solid fa-bolt"></i></span>
+                                    <span class="ln-name">Action</span>
+                                    <span class="ln-sub">invoke tool</span>
+                                </div>
+                                <div class="loop-link"><span></span></div>
+                                <div class="loop-node" data-node="observation">
+                                    <span class="ln-icon"><i class="fa-solid fa-eye"></i></span>
+                                    <span class="ln-name">Observation</span>
+                                    <span class="ln-sub">parse result</span>
+                                </div>
+                                <div class="loop-return">
+                                    <i class="fa-solid fa-rotate-left"></i> observations feed the next reasoning step
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
-    <!-- Core Tool Services Grid -->
-    <section id="modules" class="section">
-        <div class="container">
-            <div class="section-head text-center">
-                <span class="section-badge">Tool Registry & Services</span>
-                <h2 class="section-title">Modular Sub-Services Architecture</h2>
-                <p class="section-subtitle">12 specialized services orchestrated directly by the ArgusBrain via the Tool Registry facade.</p>
-            </div>
+                    <!-- RAG card -->
+                    <article class="bento-card reveal">
+                        <span class="bento-num">02</span>
+                        <span class="card-kicker">persistent intelligence</span>
+                        <h3>RAG &amp; SQLite blackboard</h3>
+                        <p>Static technique knowledge from a FAISS vector store fused with live session state — targets, findings and entity relations persisted across the whole engagement.</p>
+                        <ul class="check-list">
+                            <li><i class="fa-solid fa-check"></i>FAISS + nomic-embed-text embeddings</li>
+                            <li><i class="fa-solid fa-check"></i>SQLite schema: targets / findings / relations</li>
+                        </ul>
+                    </article>
 
-            <div class="grid grid-3">
-                <div class="card cap-card">
-                    <div class="cap-header">
-                        <i class="fa-solid fa-radar"></i>
-                        <h3>ReconService</h3>
-                    </div>
-                    <p>Coordinates multi-tool OSINT, subdomain enumeration, and WAF profiling.</p>
-                </div>
-                <div class="card cap-card">
-                    <div class="cap-header">
-                        <i class="fa-solid fa-crosshairs"></i>
-                        <h3>VulnerabilityScanners</h3>
-                    </div>
-                    <p>Automates port scanning and vulnerability template scans via Nmap and Nuclei.</p>
-                </div>
-                <div class="card cap-card">
-                    <div class="cap-header">
-                        <i class="fa-solid fa-spider"></i>
-                        <h3>CrawlerService</h3>
-                    </div>
-                    <p>Deep web endpoint discovery and asset spidering with Katana & headless crawlers.</p>
-                </div>
-                <div class="card cap-card">
-                    <div class="cap-header">
-                        <i class="fa-solid fa-mask"></i>
-                        <h3>EvasionService</h3>
-                    </div>
-                    <p>Payload obfuscation, encoding strategies, and adaptive WAF bypass techniques.</p>
-                </div>
-                <div class="card cap-card">
-                    <div class="cap-header">
-                        <i class="fa-solid fa-vial"></i>
-                        <h3>PayloadSuggester</h3>
-                    </div>
-                    <p>Context-aware exploit payload generation dynamically informed by RAG memory.</p>
-                </div>
-                <div class="card cap-card">
-                    <div class="cap-header">
-                        <i class="fa-solid fa-wrench"></i>
-                        <h3>SelfHealingService</h3>
-                    </div>
-                    <p>Autonomously detects missing dependencies or broken tools and auto-repairs in Kali.</p>
+                    <!-- WSLBridge card -->
+                    <article class="bento-card reveal delay-1">
+                        <span class="bento-num">03</span>
+                        <span class="card-kicker">tactical execution</span>
+                        <h3>WSLBridge execution layer</h3>
+                        <p>Every command lands in an isolated Kali Linux WSL container through subprocess / SSH — the host OS stays clean, tools self-heal when missing.</p>
+                        <ul class="check-list">
+                            <li><i class="fa-solid fa-check"></i>Subprocess &amp; SSH Kali bridge</li>
+                            <li><i class="fa-solid fa-check"></i>Auto self-healing (apt / pip)</li>
+                        </ul>
+                    </article>
+
+                    <!-- Reflection card -->
+                    <article class="bento-card bento-wide reveal">
+                        <div class="bento-split">
+                            <div class="bento-copy">
+                                <span class="bento-num">04</span>
+                                <span class="card-kicker">verification &amp; safety</span>
+                                <h3>Reflective verification &amp; ZERO-APT</h3>
+                                <p>Pre- and post-execution reflection kills false positives and WAF traps before they reach the report. STIX&nbsp;2.0 attacker–defender–judge cycles stress-test every conclusion.</p>
+                                <ul class="check-list">
+                                    <li><i class="fa-solid fa-check"></i>Pre / post execution reflection pass</li>
+                                    <li><i class="fa-solid fa-check"></i>Attacker–defender–judge simulation cycles</li>
+                                </ul>
+                            </div>
+                            <div class="verdict-panel" aria-hidden="true">
+                                <div class="verdict-row ok"><i class="fa-solid fa-check"></i><div><b>verified</b><span>nmap -sV → service fingerprint confirmed twice</span></div></div>
+                                <div class="verdict-row warn"><i class="fa-solid fa-triangle-exclamation"></i><div><b>waf trap suspected</b><span>response pattern matches honeypot heuristics — re-testing</span></div></div>
+                                <div class="verdict-row ok"><i class="fa-solid fa-check"></i><div><b>finding persisted</b><span>sqlite.blackboard.findings #41 · severity: high</span></div></div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Interactive Live Studio Console Section -->
-    <section id="terminal" class="section section-darker">
-        <div class="container">
-            <div class="section-head text-center">
-                <span class="section-badge">Multi-Agent Studio</span>
-                <h2 class="section-title">Argus Studio Real-Time Telemetry</h2>
-                <p class="section-subtitle">Simulating live LangGraph ReAct orchestration between Ollama LLM, WSL Kali tools, and FAISS Vector Store.</p>
-            </div>
+        <!-- ============ 02 RECON PIPELINE ============ -->
+        <section class="section section-alt" id="recon">
+            <div class="container">
+                <header class="sec-head reveal">
+                    <p class="sec-tag">[02] // automated recon pipeline</p>
+                    <h2 class="sec-title">Five phases.<br>Zero blind spots.</h2>
+                    <p class="sec-sub">The native Argus pipeline maps an entire attack surface methodically before any strategic move. Select a phase to inspect its arsenal.</p>
+                </header>
 
-            <div class="terminal-card terminal-interactive">
-                <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <span class="btn-circle red"></span>
-                        <span class="btn-circle yellow"></span>
-                        <span class="btn-circle green"></span>
+                <div class="stepper reveal" id="reconStepper">
+                    <div class="steps-rail" role="tablist" aria-label="Recon phases">
+                        <button class="step-btn is-active" role="tab" data-phase="0"><span>01</span>Passive OSINT</button>
+                        <button class="step-btn" role="tab" data-phase="1"><span>02</span>Active Brute-Force</button>
+                        <button class="step-btn" role="tab" data-phase="2"><span>03</span>Permutations</button>
+                        <button class="step-btn" role="tab" data-phase="3"><span>04</span>Probing &amp; Validation</button>
+                        <button class="step-btn" role="tab" data-phase="4"><span>05</span>Tech &amp; Vulns</button>
                     </div>
-                    <span class="terminal-title">Argus Studio v2.4 (Port 8199 / ReAct LangGraph Loop)</span>
-                    <div class="terminal-controls">
-                        <button id="runScanBtn" class="term-btn"><i class="fa-solid fa-play"></i> Re-Run Studio Simulation</button>
-                    </div>
-                </div>
-                <div class="terminal-body" id="terminalLogs">
-                    <!-- Dynamic logs populated via script.js -->
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Team Section -->
-    <section id="team" class="section">
-        <div class="container">
-            <div class="section-head text-center">
-                <span class="section-badge">Project Contributors</span>
-                <h2 class="section-title">Digilians & Argus Creators</h2>
-                <p class="section-subtitle">The engineering and security research team building the Argus Security Framework.</p>
-            </div>
-
-            <div class="team-grid">
-                <!-- Member 1: Philopater Shenouda Sedkiy -->
-                <div class="team-card">
-                    <div class="avatar-wrapper">
-                        <img src="assets/images/philopater.jpg" alt="Philopater Shenouda Sedkiy" class="member-photo">
-                    </div>
-                    <div class="member-info text-center">
-                        <h3 class="member-name">Philopater Shenouda Sedkiy</h3>
-                    </div>
-                    <div class="member-socials">
-                        <a href="https://philopatersh.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" class="social-link" title="Website Portfolio">
-                            <i class="fa-solid fa-globe"></i>
-                        </a>
-                        <a href="https://github.com/PhilopaterSh" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/philopater-shenouda/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Member 2: Momen Medhat Farouk -->
-                <div class="team-card">
-                    <div class="avatar-wrapper">
-                        <div class="avatar-placeholder">MM</div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h3 class="member-name">Momen Medhat Farouk</h3>
-                    </div>
-                    <div class="member-socials">
-                        <a href="#" class="social-link" title="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link" title="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Member 3: Mohamed Ibrahim Nasef -->
-                <div class="team-card">
-                    <div class="avatar-wrapper">
-                        <img src="assets/images/mohamed-ibrahim.png" alt="Mohamed Ibrahim Nasef" class="member-photo">
-                    </div>
-                    <div class="member-info text-center">
-                        <h3 class="member-name">Mohamed Ibrahim Nasef</h3>
-                    </div>
-                    <div class="member-socials">
-                        <a href="https://www.linkedin.com/in/mohamed-ebrahim-nasef-28807a173/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Member 4: Mostafa Hussein Ebrahim -->
-                <div class="team-card">
-                    <div class="avatar-wrapper">
-                        <div class="avatar-placeholder">MH</div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h3 class="member-name">Mostafa Hussein Ebrahim</h3>
-                    </div>
-                    <div class="member-socials">
-                        <a href="#" class="social-link" title="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link" title="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Member 5: Fatma Ali Hassan -->
-                <div class="team-card">
-                    <div class="avatar-wrapper">
-                        <div class="avatar-placeholder">FA</div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h3 class="member-name">Fatma Ali Hassan</h3>
-                    </div>
-                    <div class="member-socials">
-                        <a href="#" class="social-link" title="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link" title="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Member 6: Habiba Ashraf Moatamed -->
-                <div class="team-card">
-                    <div class="avatar-wrapper">
-                        <div class="avatar-placeholder">HA</div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h3 class="member-name">Habiba Ashraf Moatamed</h3>
-                    </div>
-                    <div class="member-socials">
-                        <a href="#" class="social-link" title="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link" title="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Member 7: Salma Nasser Mohamed -->
-                <div class="team-card">
-                    <div class="avatar-wrapper">
-                        <div class="avatar-placeholder">SN</div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h3 class="member-name">Salma Nasser Mohamed</h3>
-                    </div>
-                    <div class="member-socials">
-                        <a href="#" class="social-link" title="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link" title="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
+                    <div class="phase-panel" id="phasePanel" role="tabpanel">
+                        <!-- rendered by script.js -->
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- ============ 03 TOOL REGISTRY ============ -->
+        <section class="section" id="modules">
+            <div class="container">
+                <header class="sec-head reveal">
+                    <p class="sec-tag">[03] // tool registry &amp; services</p>
+                    <h2 class="sec-title">Twelve services,<br>one orchestrator.</h2>
+                    <p class="sec-sub">Specialized sub-services orchestrated by ArgusBrain through a single Tool Registry facade.</p>
+                </header>
+
+                <div class="services-grid">
+                    <article class="svc-card reveal"><i class="fa-solid fa-satellite-dish"></i><h3>ReconService</h3><p>Multi-tool OSINT orchestration, subdomain enumeration and WAF profiling.</p></article>
+                    <article class="svc-card reveal delay-1"><i class="fa-solid fa-crosshairs"></i><h3>VulnerabilityScanners</h3><p>Nmap port discovery chained into Nuclei template-based vulnerability scans.</p></article>
+                    <article class="svc-card reveal delay-2"><i class="fa-solid fa-spider"></i><h3>CrawlerService</h3><p>Deep endpoint discovery with Katana and headless asset spidering.</p></article>
+                    <article class="svc-card reveal"><i class="fa-solid fa-mask"></i><h3>EvasionService</h3><p>Payload obfuscation, encoding strategies and adaptive WAF bypass techniques.</p></article>
+                    <article class="svc-card reveal delay-1"><i class="fa-solid fa-vial-circle-check"></i><h3>PayloadSuggester</h3><p>Context-aware exploit payloads generated from live RAG memory hits.</p></article>
+                    <article class="svc-card reveal delay-2"><i class="fa-solid fa-heart-pulse"></i><h3>SelfHealingService</h3><p>Detects broken or missing tooling inside Kali and repairs it autonomously.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 04 LIVE STUDIO ============ -->
+        <section class="section section-alt" id="studio">
+            <div class="container">
+                <header class="sec-head reveal">
+                    <p class="sec-tag">[04] // multi-agent studio</p>
+                    <h2 class="sec-title">Watch the reasoning,<br>not just the results.</h2>
+                    <p class="sec-sub">A simulated LangGraph ReAct session between Ollama, the WSL Kali arsenal and the FAISS store — exactly how Argus narrates a real engagement.</p>
+                </header>
+
+                <div class="studio-shell reveal">
+                    <div class="term-head">
+                        <span class="term-dots"><i></i><i></i><i></i></span>
+                        <span class="term-title">argus studio — port 8199 · react-langgraph</span>
+                        <button class="term-btn" id="runStudioBtn"><i class="fa-solid fa-play"></i> Run session</button>
+                    </div>
+                    <div class="term-body studio-body" id="studioLogs" aria-live="polite"></div>
+                    <div class="term-statusbar">
+                        <span>target: <b>staging.local</b></span>
+                        <span>mode: <b>react-langgraph</b></span>
+                        <span>llm: <b>ollama/wrneo-7b</b></span>
+                        <span class="sb-right" id="studioClock">idle</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 05 TEAM ============ -->
+        <section class="section" id="team">
+            <div class="container">
+                <header class="sec-head reveal">
+                    <p class="sec-tag">[05] // project contributors</p>
+                    <h2 class="sec-title">Built in the open<br>by Digilians.</h2>
+                    <p class="sec-sub">The engineering and security research team behind the Argus framework.</p>
+                </header>
+
+                <div class="team-grid">
+                    <article class="team-card reveal">
+                        <div class="avatar-ring"><img src="assets/images/philopater.jpg" alt="Philopater Shenouda Sedkiy" loading="lazy"></div>
+                        <h3>Philopater Shenouda Sedkiy</h3>
+                        <p class="member-role">Project Lead · Core Contributor</p>
+                        <div class="member-socials">
+                            <a href="https://philopatersh.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" title="Portfolio"><i class="fa-solid fa-globe"></i></a>
+                            <a href="https://github.com/PhilopaterSh" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/philopater-shenouda/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal delay-1">
+                        <div class="avatar-ring"><span class="avatar-initials">MM</span></div>
+                        <h3>Momen Medhat Farouk</h3>
+                        <p class="member-role">Security Researcher &amp; Engineer</p>
+                        <div class="member-socials">
+                            <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal delay-2">
+                        <div class="avatar-ring"><img src="assets/images/mohamed-ibrahim.png" alt="Mohamed Ibrahim Nasef" loading="lazy"></div>
+                        <h3>Mohamed Ibrahim Nasef</h3>
+                        <p class="member-role">Security Researcher &amp; Engineer</p>
+                        <div class="member-socials">
+                            <a href="https://www.linkedin.com/in/mohamed-ebrahim-nasef-28807a173/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal">
+                        <div class="avatar-ring"><span class="avatar-initials">MH</span></div>
+                        <h3>Mostafa Hussein Ebrahim</h3>
+                        <p class="member-role">Security Researcher &amp; Engineer</p>
+                        <div class="member-socials">
+                            <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal delay-1">
+                        <div class="avatar-ring"><span class="avatar-initials">FA</span></div>
+                        <h3>Fatma Ali Hassan</h3>
+                        <p class="member-role">Security Researcher &amp; Engineer</p>
+                        <div class="member-socials">
+                            <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal delay-2">
+                        <div class="avatar-ring"><span class="avatar-initials">HA</span></div>
+                        <h3>Habiba Ashraf Moatamed</h3>
+                        <p class="member-role">Security Researcher &amp; Engineer</p>
+                        <div class="member-socials">
+                            <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal">
+                        <div class="avatar-ring"><span class="avatar-initials">SN</span></div>
+                        <h3>Salma Nasser Mohamed</h3>
+                        <p class="member-role">Security Researcher &amp; Engineer</p>
+                        <div class="member-socials">
+                            <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-left">
-                <div class="brand brand-small">
-                    <span class="brand-bracket">[</span>
-                    <span class="brand-name">ARGUS</span>
-                    <span class="brand-bracket">]</span>
-                </div>
-                <p class="copyright">© 2026 Argus Security Framework - Digilians. All rights reserved.</p>
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="brand-mark small" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 6v6c0 5 3.8 8.6 9 10 5.2-1.4 9-5 9-10V6l-9-4z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="1.6"/><path d="M12 13.4V17M9.6 15h4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <p>&copy; 2026 Argus Security Framework — Digilians.<br>All reasoning stays on your machine.</p>
             </div>
-            <div class="footer-right">
-                <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer" class="footer-link">
-                    <i class="fa-brands fa-github"></i> GitHub Repository
-                </a>
+            <div class="footer-links">
+                <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Repository</a>
+                <a href="#about">Back to top <i class="fa-solid fa-arrow-up"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- Interactive Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
