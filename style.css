@@ -573,45 +573,21 @@ code {
 @keyframes tickerScroll { to { transform: translateX(-50%); } }
 
 /* --------------------------------------------------------------------------
-   Affiliations / supervising institutions
+   Navbar affiliation strip
    -------------------------------------------------------------------------- */
-.affiliations {
-    position: relative;
-    z-index: 1;
-    padding: 2rem 0 0.6rem;
-}
-.affil-label {
-    text-align: center;
-    font-family: var(--mono);
-    font-size: 0.66rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-low);
-    margin-bottom: 1.8rem;
-}
-.affil-grid {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: center;
+.nav-affil {
+    display: inline-flex;
     align-items: center;
-    gap: clamp(2.2rem, 6vw, 4.5rem);
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.035);
 }
-.affil-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.affil-card img {
-    height: clamp(70px, 9vw, 100px);
+.nav-affil img {
+    height: 30px;
     width: auto;
-    object-fit: contain;
-    mix-blend-mode: screen;   /* black logo background disappears on dark page */
-    opacity: 0.88;
-    transition: opacity 0.25s ease, transform 0.25s ease;
-}
-.affil-card:hover img {
-    opacity: 1;
-    transform: translateY(-2px) scale(1.02);
+    display: block;
+    filter: brightness(1.18) contrast(1.06);
 }
 
 /* --------------------------------------------------------------------------
@@ -1122,6 +1098,11 @@ code {
     .steps-rail { grid-template-columns: repeat(5, 1fr); }
     .step-btn { font-size: 0.74rem; padding: 11px 8px; }
     .phase-panel { grid-template-columns: 1fr; gap: 1.4rem; }
+}
+
+@media (max-width: 1199px) {
+    /* keep the bar uncluttered — affiliations live on wide screens only */
+    .nav-affil { display: none; }
 }
 
 @media (max-width: 768px) {
