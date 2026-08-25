@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Argus - Autonomous AI Offensive Security & PenTest Framework</title>
+    <title>Argus - Autonomous AI Penetration Testing Framework</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,26 +11,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Canvas for Neural Interactive Particles -->
+    <!-- Interactive Neural Network Background Canvas -->
     <canvas id="neuralCanvas"></canvas>
     <div class="bg-grid"></div>
     <div class="glow-orb glow-1"></div>
     <div class="glow-orb glow-2"></div>
 
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
                 <span class="logo-bracket">[</span>
                 <span class="logo-text">ARGUS</span>
                 <span class="logo-bracket">]</span>
-                <span class="logo-tag">AI-PenTest</span>
+                <span class="logo-tag">Security Framework</span>
             </a>
             <div class="nav-links">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#architecture" class="nav-link">Workflow Engine</a>
-                <a href="#matrix" class="nav-link">Capabilities</a>
-                <a href="#terminal" class="nav-link">Live Terminal</a>
+                <a href="#about" class="nav-link">Overview</a>
+                <a href="#architecture" class="nav-link">System Architecture</a>
+                <a href="#recon" class="nav-link">5-Phase Recon</a>
+                <a href="#modules" class="nav-link">Core Engine</a>
+                <a href="#terminal" class="nav-link">Live Studio Console</a>
                 <a href="#team" class="nav-link">The Team</a>
                 <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer" class="btn btn-nav">
                     <i class="fa-brands fa-github"></i> Repository
@@ -40,172 +41,221 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero" id="about">
         <div class="container hero-container">
             <div class="badge">
-                <span class="pulse-dot"></span> Next-Gen Offensive Security Intelligence
+                <span class="pulse-dot"></span> Autonomous Local AI Offensive Security Framework
             </div>
             <h1 class="hero-title">
-                Autonomous Penetration Testing Driven by <span class="gradient-text">Neural Agents</span>
+                Intelligent Security Reasoning & <span class="gradient-text">Tactical Tool Orchestration</span>
             </h1>
             <p class="hero-description">
-                <strong>Project Argus</strong> reimagines automated cybersecurity assessment. By combining dynamic multi-agent LLM reasoning, sandboxed exploit chaining, and automated attack-surface telemetry, Argus continuously identifies, validates, and remediates modern cyber vulnerabilities before adversaries can strike.
+                <strong>Project Argus</strong> bridges the gap between high-level AI reasoning and low-level penetration testing arsenals. Powered by local LLMs (Ollama / WhiteRabbitNeo), LangGraph ReAct workflows, RAG Knowledge Fusion (FAISS), and seamless Windows-to-Kali Linux (WSL) bridging.
             </p>
             <div class="hero-actions">
                 <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                     <i class="fa-brands fa-github"></i> Explore Source Code
                 </a>
                 <a href="#architecture" class="btn btn-secondary">
-                    <i class="fa-solid fa-network-wired"></i> System Architecture
+                    <i class="fa-solid fa-diagram-project"></i> Architecture & arc42
                 </a>
             </div>
 
-            <!-- Live Metrics Strip -->
+            <!-- Authentic Project Metrics -->
             <div class="metrics-grid">
                 <div class="metric-card">
                     <span class="metric-number" data-target="100">0%</span>
-                    <span class="metric-label">Autonomous Exploitation Chaining</span>
+                    <span class="metric-label">Local Data Privacy (Ollama LLM)</span>
                 </div>
                 <div class="metric-card">
-                    <span class="metric-number" data-target="98.7">0%</span>
-                    <span class="metric-label">Zero-Day Verification Accuracy</span>
+                    <span class="metric-number" data-target="5">0</span>
+                    <span class="metric-label">Native Recon Engine Phases</span>
                 </div>
                 <div class="metric-card">
-                    <span class="metric-number" data-target="10">0x</span>
-                    <span class="metric-label">Faster Remediation Cycle</span>
+                    <span class="metric-number" data-target="12">0</span>
+                    <span class="metric-label">Integrated WSL Tool Services</span>
                 </div>
                 <div class="metric-card">
                     <span class="metric-number" data-target="0">0</span>
-                    <span class="metric-label">Sandbox False Positives</span>
+                    <span class="metric-label">Zero-APT Simulation Impact</span>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Architecture & Interactive Workflow Section -->
+    <!-- Real Architecture & Workflow Engine (arc42 / C4 Model) -->
     <section id="architecture" class="section">
         <div class="container">
             <div class="section-head text-center">
-                <span class="section-badge">How Argus Operates</span>
-                <h2 class="section-title">End-to-End AI Attack & Defense Pipeline</h2>
-                <p class="section-subtitle">A multi-stage cognitive framework moving seamlessly from perimeter reconnaissance to automated exploit generation and defensive remediation.</p>
+                <span class="section-badge">arc42 & C4 Architecture</span>
+                <h2 class="section-title">The Brain, Body & Knowledge Architecture</h2>
+                <p class="section-subtitle">A multi-layered cognitive framework dividing reasoning, persistent intelligence, and low-level tactical execution.</p>
             </div>
 
             <div class="workflow-grid">
-                <!-- Step 1 -->
+                <!-- Pillar 1: ArgusBrain & LangGraph -->
                 <div class="workflow-card">
                     <div class="step-num">01</div>
-                    <div class="workflow-icon"><i class="fa-solid fa-radar"></i></div>
-                    <h3>Adaptive Surface Recon</h3>
-                    <p>Continuous discovery of APIs, active endpoints, exposed microservices, and DNS permutations across hybrid environments.</p>
+                    <div class="workflow-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>ArgusBrain & LangGraph</h3>
+                    <p>ReAct & StateGraph controller executing the <code>Thought ➔ Action ➔ Observation</code> loop with automated JSON and text parsing fallback.</p>
                     <ul class="workflow-features">
-                        <li><i class="fa-solid fa-check"></i> Subdomain & Port Vectoring</li>
-                        <li><i class="fa-solid fa-check"></i> API Schema Reconstruction</li>
+                        <li><i class="fa-solid fa-check"></i> WhiteRabbitNeo-V3-7B / Local Ollama</li>
+                        <li><i class="fa-solid fa-check"></i> LangGraph ReAct Dual-Mode Agent</li>
                     </ul>
                 </div>
 
-                <!-- Step 2 -->
+                <!-- Pillar 2: RAG & Memory Blackboard -->
                 <div class="workflow-card">
                     <div class="step-num">02</div>
-                    <div class="workflow-icon"><i class="fa-solid fa-brain"></i></div>
-                    <h3>Multi-Agent LLM Reasoning</h3>
-                    <p>Cooperating AI agents synthesize reconnaissance data to construct threat graphs and model complex multi-step attack vectors.</p>
+                    <div class="workflow-icon"><i class="fa-solid fa-database"></i></div>
+                    <h3>RAG & SQLite Blackboard</h3>
+                    <p>Fuses static technical knowledge from FAISS vector store with live session target state across targets, findings, and entities.</p>
                     <ul class="workflow-features">
-                        <li><i class="fa-solid fa-check"></i> Contextual Vulnerability Modeling</li>
-                        <li><i class="fa-solid fa-check"></i> Dynamic Payload Formulation</li>
+                        <li><i class="fa-solid fa-check"></i> FAISS Vector Store + nomic-embed-text</li>
+                        <li><i class="fa-solid fa-check"></i> Persistent SQLite Blackboard Schema</li>
                     </ul>
                 </div>
 
-                <!-- Step 3 -->
+                <!-- Pillar 3: WSLBridge & Tool Registry -->
                 <div class="workflow-card">
                     <div class="step-num">03</div>
-                    <div class="workflow-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3>Sandboxed Validation</h3>
-                    <p>Executes safe, non-destructive proof-of-concept verification inside isolated sandboxes to eliminate false positives.</p>
+                    <div class="workflow-icon"><i class="fa-solid fa-terminal"></i></div>
+                    <h3>WSLBridge Execution</h3>
+                    <p>Seamless execution bridge running security arsenals inside isolated Kali Linux WSL containers without polluting the host OS.</p>
                     <ul class="workflow-features">
-                        <li><i class="fa-solid fa-check"></i> Non-destructive PoC Validation</li>
-                        <li><i class="fa-solid fa-check"></i> Zero-noise Verification</li>
+                        <li><i class="fa-solid fa-check"></i> Subprocess & SSH Kali Bridge</li>
+                        <li><i class="fa-solid fa-check"></i> Auto Self-Healing (APT/Pip)</li>
                     </ul>
                 </div>
 
-                <!-- Step 4 -->
+                <!-- Pillar 4: Reflective Verification & ZERO-APT -->
                 <div class="workflow-card">
                     <div class="step-num">04</div>
-                    <div class="workflow-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                    <h3>Remediation Synthesizer</h3>
-                    <p>Generates tailored patch recommendations, custom WAF rules, and executive risk scores for DevOps & Security teams.</p>
+                    <div class="workflow-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Reflective & ZERO-APT</h3>
+                    <p>Pre-execution and post-execution verification to eliminate false positives and WAF traps, alongside STIX 2.0 APT simulation cycles.</p>
                     <ul class="workflow-features">
-                        <li><i class="fa-solid fa-check"></i> Auto-Generated Code Patches</li>
-                        <li><i class="fa-solid fa-check"></i> Compliance-Ready Audit Reports</li>
+                        <li><i class="fa-solid fa-check"></i> Pre/Post Execution Reflection</li>
+                        <li><i class="fa-solid fa-check"></i> Attacker-Defender-Judge Cycles</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Attack Vectors & Matrix -->
-    <section id="matrix" class="section section-darker">
+    <!-- 5-Phase Argus Recon Engine Section -->
+    <section id="recon" class="section section-darker">
         <div class="container">
             <div class="section-head text-center">
-                <span class="section-badge">Core Capabilities</span>
-                <h2 class="section-title">Built for Modern Attack Surfaces</h2>
-                <p class="section-subtitle">Argus autonomously targets and audits critical cloud, API, and internal enterprise architectures.</p>
+                <span class="section-badge">Automated Recon Pipeline</span>
+                <h2 class="section-title">Argus 5-Phase Native Recon Engine</h2>
+                <p class="section-subtitle">The custom pipeline engineered to map entire attack surfaces methodically before strategic exploitation.</p>
+            </div>
+
+            <div class="recon-timeline">
+                <div class="timeline-step">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-content">
+                        <h4>Phase 1: Passive OSINT</h4>
+                        <p>Asset & subdomain harvesting via <code>Subfinder</code>, <code>Findomain</code>, <code>Amass</code>, and <code>Assetfinder</code>.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-content">
+                        <h4>Phase 2: Active Brute-Force</h4>
+                        <p>DNS & endpoint brute-forcing with custom wordlists utilizing <code>Gobuster</code> and <code>FFuf</code>.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-content">
+                        <h4>Phase 3: Permutations & Permutate</h4>
+                        <p>Dynamic permutation synthesis using <code>DNSGen</code> and mass resolver queries with <code>MassDNS</code>.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-dot">4</div>
+                    <div class="timeline-content">
+                        <h4>Phase 4: Probing & Validation</h4>
+                        <p>Live HTTP/HTTPS service validation, title extraction, and deduplication via <code>HTTPX</code> & <code>anew</code>.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-dot">5</div>
+                    <div class="timeline-content">
+                        <h4>Phase 5: Deep Tech & Vuln Analysis</h4>
+                        <p>Fingerprinting technologies, WAF detection, and vulnerability scanning via <code>WhatWeb</code>, <code>Wafw00f</code>, <code>Nmap</code>, and <code>Nuclei</code>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Tool Services Grid -->
+    <section id="modules" class="section">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="section-badge">Tool Registry & Services</span>
+                <h2 class="section-title">Modular Sub-Services Architecture</h2>
+                <p class="section-subtitle">12 specialized services orchestrated directly by the ArgusBrain via the Tool Registry facade.</p>
             </div>
 
             <div class="grid grid-3">
                 <div class="card cap-card">
                     <div class="cap-header">
-                        <i class="fa-solid fa-cloud-bolt"></i>
-                        <h3>Cloud & IAM Misconfigurations</h3>
+                        <i class="fa-solid fa-radar"></i>
+                        <h3>ReconService</h3>
                     </div>
-                    <p>Identifies privilege escalation vectors, loose IAM permissions, and leaky S3/Blob storage policies in real time.</p>
+                    <p>Coordinates multi-tool OSINT, subdomain enumeration, and WAF profiling.</p>
                 </div>
                 <div class="card cap-card">
                     <div class="cap-header">
-                        <i class="fa-solid fa-code"></i>
-                        <h3>API & Business Logic Flaws</h3>
+                        <i class="fa-solid fa-crosshairs"></i>
+                        <h3>VulnerabilityScanners</h3>
                     </div>
-                    <p>Uncovers complex BOLA, IDOR, parameter tampering, and payment bypass flaws that standard AST tools miss.</p>
+                    <p>Automates port scanning and vulnerability template scans via Nmap and Nuclei.</p>
                 </div>
                 <div class="card cap-card">
                     <div class="cap-header">
-                        <i class="fa-solid fa-database"></i>
-                        <h3>Deep Injection & Zero-Days</h3>
+                        <i class="fa-solid fa-spider"></i>
+                        <h3>CrawlerService</h3>
                     </div>
-                    <p>Synthesizes novel SQLi, NoSQLi, Template Injection, and RCE payloads adapted specifically to target defenses.</p>
+                    <p>Deep web endpoint discovery and asset spidering with Katana & headless crawlers.</p>
                 </div>
                 <div class="card cap-card">
                     <div class="cap-header">
-                        <i class="fa-solid fa-network-wired"></i>
-                        <h3>Internal Pivoting & Lateral Movement</h3>
+                        <i class="fa-solid fa-mask"></i>
+                        <h3>EvasionService</h3>
                     </div>
-                    <p>Simulates advanced post-exploitation chaining to discover unsegmented subnets and domain compromise routes.</p>
+                    <p>Payload obfuscation, encoding strategies, and adaptive WAF bypass techniques.</p>
                 </div>
                 <div class="card cap-card">
                     <div class="cap-header">
-                        <i class="fa-solid fa-lock-open"></i>
-                        <h3>Authentication & JWT Bypass</h3>
+                        <i class="fa-solid fa-vial"></i>
+                        <h3>PayloadSuggester</h3>
                     </div>
-                    <p>Audits weak cryptography algorithms, token forging, algorithm-switching attacks, and session fixation traps.</p>
+                    <p>Context-aware exploit payload generation dynamically informed by RAG memory.</p>
                 </div>
                 <div class="card cap-card">
                     <div class="cap-header">
-                        <i class="fa-solid fa-file-shield"></i>
-                        <h3>Live Playbook Orchestration</h3>
+                        <i class="fa-solid fa-wrench"></i>
+                        <h3>SelfHealingService</h3>
                     </div>
-                    <p>Exports actionable, developer-friendly git-ready patch pull requests and infrastructure-as-code hardening scripts.</p>
+                    <p>Autonomously detects missing dependencies or broken tools and auto-repairs in Kali.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Live Terminal Simulation -->
-    <section id="terminal" class="section">
+    <!-- Interactive Live Studio Console Section -->
+    <section id="terminal" class="section section-darker">
         <div class="container">
             <div class="section-head text-center">
-                <span class="section-badge">Live Console</span>
-                <h2 class="section-title">Interactive Neural Engine Telemetry</h2>
-                <p class="section-subtitle">Experience how Argus orchestrates live penetration tests through asynchronous agent telemetry.</p>
+                <span class="section-badge">Multi-Agent Studio</span>
+                <h2 class="section-title">Argus Studio Real-Time Telemetry</h2>
+                <p class="section-subtitle">Simulating live LangGraph ReAct orchestration between Ollama LLM, WSL Kali tools, and FAISS Vector Store.</p>
             </div>
 
             <div class="terminal-card terminal-interactive">
@@ -215,9 +265,9 @@
                         <span class="btn-circle yellow"></span>
                         <span class="btn-circle green"></span>
                     </div>
-                    <span class="terminal-title">argus-core v2.4 (Active Neural Session)</span>
+                    <span class="terminal-title">Argus Studio v2.4 (Port 8199 / ReAct LangGraph Loop)</span>
                     <div class="terminal-controls">
-                        <button id="runScanBtn" class="term-btn"><i class="fa-solid fa-play"></i> Re-Run Simulation</button>
+                        <button id="runScanBtn" class="term-btn"><i class="fa-solid fa-play"></i> Re-Run Studio Simulation</button>
                     </div>
                 </div>
                 <div class="terminal-body" id="terminalLogs">
@@ -228,12 +278,12 @@
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="section section-darker">
+    <section id="team" class="section">
         <div class="container">
             <div class="section-head text-center">
                 <span class="section-badge">Project Contributors</span>
                 <h2 class="section-title">Digilians & Argus Creators</h2>
-                <p class="section-subtitle">The dedicated research and engineering team building the future of automated offensive AI.</p>
+                <p class="section-subtitle">The engineering and security research team building the Argus Security Framework.</p>
             </div>
 
             <div class="team-grid">
@@ -378,7 +428,7 @@
                     <span class="logo-text">ARGUS</span>
                     <span class="logo-bracket">]</span>
                 </div>
-                <p class="copyright">© 2026 Argus Project - Digilians. All rights reserved.</p>
+                <p class="copyright">© 2026 Argus Security Framework - Digilians. All rights reserved.</p>
             </div>
             <div class="footer-right">
                 <a href="https://github.com/PhilopaterSh/Argus-Digilians" target="_blank" rel="noopener noreferrer" class="footer-link">

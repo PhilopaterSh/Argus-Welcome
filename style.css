@@ -257,8 +257,8 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    line-height: 1.18;
+    font-size: 3.4rem;
+    line-height: 1.2;
     font-weight: 800;
     margin-bottom: 1.6rem;
     letter-spacing: -0.03em;
@@ -271,11 +271,11 @@ body {
 }
 
 .hero-description {
-    font-size: 1.2rem;
+    font-size: 1.18rem;
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 2.8rem;
-    max-width: 860px;
+    max-width: 880px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -364,12 +364,12 @@ body {
 .section-subtitle {
     color: var(--text-secondary);
     font-size: 1.1rem;
-    max-width: 680px;
+    max-width: 700px;
     margin: 0 auto;
     line-height: 1.7;
 }
 
-/* Workflow Steps (4 Pillars) */
+/* Workflow Steps */
 .workflow-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -450,7 +450,66 @@ body {
     font-size: 0.8rem;
 }
 
-/* Capability Cards */
+code {
+    background: rgba(0, 242, 254, 0.1);
+    color: var(--accent-cyan);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+}
+
+/* 5-Phase Recon Timeline */
+.recon-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.timeline-step {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.timeline-step:hover {
+    border-color: var(--accent-cyan);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 242, 254, 0.12);
+}
+
+.timeline-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+    color: #000;
+    font-weight: 800;
+    font-family: var(--font-mono);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.timeline-content h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* Tool Services Grid */
 .grid {
     display: grid;
     gap: 1.8rem;

@@ -73,20 +73,23 @@ function animateParticles() {
 initParticles();
 animateParticles();
 
-// Live Terminal Simulation Engine
+// Real Argus Multi-Agent Studio Telemetry Simulation
 const terminalLogs = document.getElementById('terminalLogs');
 const runScanBtn = document.getElementById('runScanBtn');
 
 const simulationSteps = [
-    { type: 'cmd', text: '<span class="prompt">argus@core:~$</span> python -m argus.engine --target enterprise-staging.internal --mode autonomous-chain' },
-    { type: 'log-info', text: '[+] [RECON] Initializing Argus Neural Penetration Engine v2.4...' },
-    { type: 'log-info', text: '[+] [RECON] Passive OSINT & DNS permutation complete: 28 subdomains resolved.' },
-    { type: 'log-ai', text: '[🧠] [AGENT-REASONING] Threat Model synthesized: Target exposes microservices mesh with GraphQL & REST gateways.' },
-    { type: 'log-warning', text: '[!] [DISCOVERY] Parameter tampering vector spotted at /api/v2/auth/session-exchange (BOLA candidate).' },
-    { type: 'log-ai', text: '[🧠] [AGENT-PAYLOAD] Formulating adaptive non-destructive JWT exploit candidate...' },
-    { type: 'log-danger', text: '[🚨] [VALIDATION] High Severity Authenticated Escalation validated in sandbox environment!' },
-    { type: 'log-success', text: '[✔] [REMEDIATION] Auto-generated mitigation patch created: "patch-auth-validation-v2.diff"' },
-    { type: 'log-info', text: '[+] [REPORT] Executive risk telemetry & audit playbook compiled to ./reports/argus-audit-latest.pdf' }
+    { type: 'cmd', text: '<span class="prompt">argus@studio:~$</span> python -m app.GUI.studio --port 8199 --target target.local --mode react-langgraph' },
+    { type: 'log-info', text: '[+] [INIT] ArgusBrain initializing via Ollama (Model: WhiteRabbitNeo-V3-7B)...' },
+    { type: 'log-info', text: '[+] [RAG] FAISS Vector Store loaded with nomic-embed-text embeddings from knowledge_base/.' },
+    { type: 'log-info', text: '[+] [WSL-BRIDGE] Connected to Kali Linux environment (Subprocess/SSH verified).' },
+    { type: 'log-ai', text: '[🧠] [THOUGHT] "Target given: target.local. Executing Phase 1 Passive OSINT to identify subdomains."' },
+    { type: 'log-info', text: '[⚡] [ACTION] ReconService.execute_passive_recon(tools=["subfinder", "findomain", "assetfinder"])' },
+    { type: 'log-success', text: '[✔] [OBSERVATION] 18 live subdomains discovered, passed to anew deduplication pipeline.' },
+    { type: 'log-ai', text: '[🧠] [THOUGHT] "Subdomains collected. Running Phase 4 HTTPX validation & Phase 5 Nmap/Nuclei scanning."' },
+    { type: 'log-warning', text: '[!] [DISCOVERY] HTTPX identified exposed admin gateway at api.target.local:8080.' },
+    { type: 'log-ai', text: '[🧠] [REFLECTIVE] Running pre_execute_verify to ensure safety and avoid WAF false positives.' },
+    { type: 'log-success', text: '[✔] [MEMORY] Findings and entity relations persisted into SQLite Blackboard (targets, findings, relations).' },
+    { type: 'log-info', text: '[+] [FINAL ANSWER] Recon cycle complete. Session state synchronized in Streamlit Studio.' }
 ];
 
 let simIndex = 0;
@@ -101,11 +104,11 @@ function printLogLine() {
         terminalLogs.appendChild(p);
         terminalLogs.scrollTop = terminalLogs.scrollHeight;
         simIndex++;
-        setTimeout(printLogLine, 650);
+        setTimeout(printLogLine, 600);
     } else {
         isRunning = false;
         runScanBtn.disabled = false;
-        runScanBtn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Re-Run Simulation';
+        runScanBtn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Re-Run Studio Simulation';
     }
 }
 
@@ -113,7 +116,7 @@ function startSimulation() {
     if (isRunning) return;
     isRunning = true;
     runScanBtn.disabled = true;
-    runScanBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Simulating Scan...';
+    runScanBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Executing LangGraph Loop...';
     terminalLogs.innerHTML = '';
     simIndex = 0;
     printLogLine();
@@ -135,7 +138,7 @@ window.addEventListener('scroll', () => {
             const target = parseFloat(counter.getAttribute('data-target'));
             let current = 0;
             const step = target / 40;
-            const suffix = counter.innerText.includes('%') ? '%' : counter.innerText.includes('x') ? 'x' : '';
+            const suffix = counter.innerText.includes('%') ? '%' : '';
             
             const timer = setInterval(() => {
                 current += step;
