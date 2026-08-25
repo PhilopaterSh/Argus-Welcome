@@ -559,16 +559,17 @@ code {
     width: max-content;
     animation: tickerScroll 36s linear infinite;
 }
-.ticker-group { display: flex; gap: 3rem; padding-right: 3rem; }
+.ticker-group { display: flex; gap: 2.6rem; padding-right: 2.6rem; align-items: center; }
 .ticker-group span {
     font-family: var(--mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-low);
+    font-size: 0.86rem;
+    color: var(--text-mid);
     white-space: nowrap;
+    transition: color 0.2s;
 }
-.ticker-group span i { color: var(--emerald); font-style: normal; margin-left: 4px; }
+/* real-world look: tools stay lowercase exactly as typed in a terminal */
+.ticker-group span::before { content: '$ '; color: var(--text-low); }
+.ticker-group span i { font-style: normal; color: var(--emerald); }
 @keyframes tickerScroll { to { transform: translateX(-50%); } }
 
 /* --------------------------------------------------------------------------
