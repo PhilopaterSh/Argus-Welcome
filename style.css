@@ -582,21 +582,20 @@ code {
 @keyframes tickerScroll { to { transform: translateX(-50%); } }
 
 /* --------------------------------------------------------------------------
-   Navbar affiliation strip
+   Navbar affiliation strip — original artwork on its native black backdrop
    -------------------------------------------------------------------------- */
 .nav-affil {
     display: inline-flex;
     align-items: center;
-    padding: 5px 13px;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
     border-radius: 10px;
-    background: linear-gradient(180deg, #ffffff 0%, #e8eeea 100%);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: #000000;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .nav-affil:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+    border-color: var(--line-strong);
+    box-shadow: 0 0 22px -6px var(--glow);
 }
 .nav-affil img {
     height: 30px;
