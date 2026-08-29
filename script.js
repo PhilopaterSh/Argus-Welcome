@@ -372,20 +372,21 @@ if (counters.length) {
 /* --------------------------------------------------------------------------
  * 8. Autoplay demo video on scroll
  * ------------------------------------------------------------------------ */
-const videoIframe = document.getElementById('demoVideoIframe');
+const demoVideo = document.getElementById('demoVideo');
 const videoShell = document.getElementById('demoVideoShell');
 
-if (videoIframe && videoShell) {
+if (demoVideo && videoShell) {
     const videoObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                if (videoIframe.dataset.src && !videoIframe.src) {
-                    videoIframe.src = videoIframe.dataset.src;
-                }
-                videoObserver.unobserve(entry.target);
+                demoVideo.play().catch(err => {
+                    console.log('Autoplay prevented or waiting for interaction:', err);
+                });
+            } else {
+                demoVideo.pause();
             }
         });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.25 });
 
     videoObserver.observe(videoShell);
 }
