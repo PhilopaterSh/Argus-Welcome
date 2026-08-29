@@ -1140,6 +1140,33 @@ code {
     .term-head { flex-wrap: wrap; row-gap: 8px; }
     .term-chip { display: none; }
 }
+/* Video Demo Container */
+.video-shell {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 
 /* --------------------------------------------------------------------------
    Reduced motion
