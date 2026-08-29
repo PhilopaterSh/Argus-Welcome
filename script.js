@@ -368,3 +368,25 @@ if (counters.length) {
     }, { threshold: 0.5 });
     counters.forEach(el => counterObserver.observe(el));
 }
+
+/* --------------------------------------------------------------------------
+ * 8. Autoplay demo video on scroll
+ * ------------------------------------------------------------------------ */
+const videoIframe = document.getElementById('demoVideoIframe');
+const videoShell = document.getElementById('demoVideoShell');
+
+if (videoIframe && videoShell) {
+    const videoObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (videoIframe.dataset.src && !videoIframe.src) {
+                    videoIframe.src = videoIframe.dataset.src;
+                }
+                videoObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    videoObserver.observe(videoShell);
+}
+
