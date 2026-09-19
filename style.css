@@ -1055,6 +1055,54 @@ code {
 }
 
 /* --------------------------------------------------------------------------
+   Supervision & Quotes
+   -------------------------------------------------------------------------- */
+.supervision-block {
+    margin-top: 4rem;
+    padding-top: 3.5rem;
+    border-top: 1px dashed var(--line);
+}
+.member-affil {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    line-height: 1.45;
+    margin-top: -6px;
+    margin-bottom: 6px;
+}
+.team-card.highlight-card {
+    border-color: rgba(45, 212, 191, 0.35);
+    background: radial-gradient(circle at 50% 0%, rgba(45, 212, 191, 0.08), var(--surface) 75%);
+}
+.endorsement-quote {
+    margin-top: 3rem;
+    padding: 2rem 2.4rem;
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--emerald-hi);
+    border-radius: var(--radius);
+    position: relative;
+}
+.endorsement-quote blockquote {
+    margin: 0;
+    font-size: 1.12rem;
+    line-height: 1.7;
+    color: var(--text-high, #f8fafc);
+    font-weight: 500;
+}
+.endorsement-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    font-style: normal;
+}
+.endorsement-quote cite strong {
+    color: var(--emerald-hi);
+}
+
+/* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */
 .footer {

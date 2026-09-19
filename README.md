@@ -14,6 +14,17 @@ Welcome and presentation landing page for **Project Argus (Autonomous AI Penetra
 - **Habiba Ashraf Moatamed** (Security Researcher & Engineer)
 - **Salma Nasser Mohamed** (Security Researcher & Engineer)
 
+## Supervision & Academic Leadership
+- **Project Supervisor:** Eng. Wesam Ahmed
+- **General Supervisors:**
+  - **Dr. Ibrahim Gomaa**, Assistant Professor, National Telecommunication Institute (NTI)
+  - **Dr. Rabab M. Nabawy**, Assistant Professor, MSA University
+- **Academic Director:** Prof. Dr. Ahmed Tobal
+- **Executive Director:** Prof. Ali El Semary
+
+> *"Insisting on evidence rather than enthusiasm at every review point — measuring rather than assuming."*  
+> — **Eng. Wesam Ahmed**, Project Supervisor
+
 ## Features of this Landing Page
 - Modern Dark Cyberpunk / Terminal Theme.
 - Responsive layout (Desktop, Tablet, Mobile).
